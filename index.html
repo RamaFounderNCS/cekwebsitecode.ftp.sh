@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hacked by MatrixMan</title>
+  <meta name="description" content="Hacked by MatrixMan" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+      padding: 20px;
+      text-align: center;
+    }
+    h1, h2 {
+      max-width: 600px;
+    }
+    input, button {
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 1rem;
+      border-radius: 4px;
+    }
+    input {
+      background: black;
+      border: 1px solid #0f0;
+      color: #0f0;
+    }
+    button {
+      background: #0f0;
+      color: black;
+      border: none;
+      cursor: pointer;
+      margin: 5px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: black;
+      color: #0f0;
+      border: 1px solid #0f0;
+    }
+    .matrix-rain div {
+      position: absolute;
+      top: -100px;
+      color: #0f0;
+      animation: fall 4s linear infinite;
+      user-select: none;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div id="rain"></div>
+  <h1>#NoLifeIsSafe</h1>
+  <h2>Even weak security opens the door. Masukkan kode untuk lanjut:</h2>
+  <input type="password" id="pw" placeholder="Masukkan kode" />
+  <br />
+  <button onclick="validate()">Unlock</button>
+  <button onclick="window.location.href='mailto:offcncs@gmail.com'">Hubungi Saya</button>
+
+  <script>
+    // Simulasi password hash dan validasi
+    const storedHash = '051123'; // Simulasi — idealnya ini di server
+
+    // Obfuscasi ringan
+    function _0xabc123(input) {
+      return btoa(input).split('').reverse().join('');
+    }
+
+    function validate() {
+      const input = document.getElementById("pw").value;
+      const processed = _0xabc123(input);
+      const expected = _0xabc123(storedHash);
+
+      if (processed === expected) {
+        alert("Akses diberikan.");
+        window.location.href = "https://www.profitablecpmrate.com/u598fm1ar?key=9c9ec3d0042015f36ec8197285c31058";
+      } else {
+        alert("Kode salah!");
+      }
+    }
+
+    // Efek Matrix
+    const rain = document.getElementById("rain");
+    const chars = "101010101";
+    for (let i = 0; i < 80; i++) {
+      const drop = document.createElement("div");
+      drop.textContent = chars[Math.floor(Math.random() * chars.length)];
+      drop.style.left = Math.random() * 100 + "vw";
+      drop.style.animationDuration = 2 + Math.random() * 3 + "s";
+      drop.style.fontSize = 14 + Math.random() * 10 + "px";
+      rain.appendChild(drop);
+    }
+  </script>
+</body>
+</html>
