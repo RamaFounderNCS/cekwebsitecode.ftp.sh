@@ -67,12 +67,6 @@
     .contact-button:hover {
       background-color: #0c0;
     }
-    audio {
-      margin-top: 30px;
-      width: 100%;
-      max-width: 500px;
-      filter: drop-shadow(0 0 5px #0f0);
-    }
     footer {
       margin-top: 40px;
       font-size: 0.9rem;
@@ -86,32 +80,8 @@
       height: auto;
       filter: brightness(1.2) contrast(1.1);
     }
-    .console {
-      background-color: #111;
-      border: 1px solid #0f0;
-      padding: 20px;
-      margin-top: 30px;
-      width: 90%;
-      max-width: 700px;
-      text-align: left;
-      font-size: 1rem;
-      min-height: 200px;
-      box-shadow: 0 0 10px #0f0;
-      color: #0f0;
-      overflow-y: auto;
-      white-space: pre-wrap;
-    }
-    .input-line {
-      display: inline;
-    }
-    #input {
-      background: transparent;
-      border: none;
-      color: #0f0;
-      outline: none;
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 1rem;
-      width: 90%;
+    audio.hidden {
+      display: none;
     }
   </style>
 </head>
@@ -125,67 +95,24 @@
     <span>MR.M05T3R - GHOSTCLONET77 - SUMOONID - FAKEWORLD - INDRA XPLOIT NCS - N0B1T4 - NEWBIE CYBER SECURITY - SURABAYAXPLOIT - NOVGREY - DORAEMON CYBER TEAM - KBCII</span>
   </div>
 
-  <div class="console" id="console">
-    <div>> Initializing hack tool...</div>
-    <div>> Connecting to target server...</div>
-    <div>> Access granted.</div>
-    <div>> Welcome to NCS Terminal</div>
-    <div class="input-line">> <input type="text" id="input" autofocus /></div>
-  </div>
-
-  <audio controls>
-    <source src="https://github.com/defacemoster/audio/raw/refs/heads/main/IMLOALE" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
-
   <a href="mailto:offcncs@gmail.com" class="contact-button">Hubungi Kami</a>
 
   <footer>
     &copy; 2025 Newbie Cyber Security. All Rights Reserved. Founder: MR.M05T3R
   </footer>
 
-  <!-- Suara efek ketik -->
-  <audio id="type-sound" src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_fbf12756ee.mp3?filename=keyboard-typing-1-9924.mp3" preload="auto"></audio>
-
-  <!-- Musik hacker autoplay -->
-  <audio id="bg-music" autoplay loop>
+  <!-- Musik latar tersembunyi -->
+  <audio id="bg-music" class="hidden" autoplay loop>
     <source src="https://files.catbox.moe/td94zo.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
 
   <script>
-    const input = document.getElementById("input");
-    const consoleBox = document.getElementById("console");
-    const typeSound = document.getElementById("type-sound");
-    const bgMusic = document.getElementById("bg-music");
-
-    // Efek suara saat mengetik
-    input.addEventListener("keydown", function(e) {
-      if (e.key.length === 1 || e.key === "Backspace") {
-        typeSound.currentTime = 0;
-        typeSound.play();
-      }
-
-      // Handle enter
-      if (e.key === "Enter") {
-        const command = input.value.trim();
-        const response = document.createElement("div");
-        response.textContent = `> ${command}`;
-        consoleBox.insertBefore(response, input.parentElement);
-
-        const result = document.createElement("div");
-        result.textContent = `> Command "${command}" not recognized`;
-        consoleBox.insertBefore(result, input.parentElement);
-
-        input.value = "";
-        consoleBox.scrollTop = consoleBox.scrollHeight;
-      }
-    });
-
-    // Autoplay musik hacker jika browser butuh klik dulu
+    // Autoplay musik jika browser minta interaksi pengguna
     window.addEventListener("click", () => {
-      if (bgMusic.paused) {
-        bgMusic.play();
+      const music = document.getElementById("bg-music");
+      if (music.paused) {
+        music.play().catch(err => console.log("Autoplay diblokir:", err));
       }
     });
   </script>
