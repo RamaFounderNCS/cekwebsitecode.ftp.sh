@@ -3,56 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hacked by MatrixMan</title>
-  <meta name="description" content="Hacked by MatrixMan" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="robots" content="noindex, nofollow">
+  <title>Hacked By MatrixMan</title>
+  <meta name="description" content="Hacked By MatrixMan" />
   <style>
-    body {
-      background-color: #000;
-      color: #0f0;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Courier New', Courier, monospace;
+    }
+    body {
+      background: black;
+      color: lime;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      flex-direction: column;
       overflow: hidden;
-      padding: 20px;
       text-align: center;
+      padding: 20px;
     }
-    h1, h2 {
-      max-width: 600px;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
     }
-    input, button {
-      padding: 10px;
-      margin-top: 10px;
+    h2 {
       font-size: 1rem;
-      border-radius: 4px;
+      max-width: 600px;
+      margin-bottom: 20px;
     }
     input {
+      padding: 10px;
+      font-size: 1rem;
+      width: 80%;
+      max-width: 300px;
       background: black;
-      border: 1px solid #0f0;
-      color: #0f0;
+      color: lime;
+      border: 1px solid lime;
+      border-radius: 5px;
+      margin-bottom: 10px;
     }
     button {
-      background: #0f0;
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin: 5px;
+      background-color: lime;
       color: black;
       border: none;
       cursor: pointer;
-      margin: 5px;
       transition: 0.3s;
+      border-radius: 5px;
     }
     button:hover {
       background: black;
-      color: #0f0;
-      border: 1px solid #0f0;
+      color: lime;
+      border: 1px solid lime;
     }
     .matrix-rain div {
       position: absolute;
       top: -100px;
       color: #0f0;
+      font-size: 20px;
       animation: fall 4s linear infinite;
+      white-space: nowrap;
       user-select: none;
     }
     @keyframes fall {
@@ -65,44 +79,39 @@
 <body>
   <div id="rain"></div>
   <h1>#NoLifeIsSafe</h1>
-  <h2>Even weak security opens the door. Masukkan kode untuk lanjut:</h2>
-  <input type="password" id="pw" placeholder="Masukkan kode" />
-  <br />
+  <h2>Honestly I'm Not Good at Hacking, But With God's Permission I Can Change the Appearance of This Website Because Its Security Is Too Weak</h2>
+  <input type="password" id="password" placeholder="Masukkan kode" />
+  <br>
   <button onclick="validate()">Unlock</button>
   <button onclick="window.location.href='mailto:offcncs@gmail.com'">Hubungi Saya</button>
 
   <script>
-    // Simulasi password hash dan validasi
-    const storedHash = '051123'; // Simulasi — idealnya ini di server
-
-    // Obfuscasi ringan
-    function _0xabc123(input) {
-      return btoa(input).split('').reverse().join('');
-    }
-
-    function validate() {
-      const input = document.getElementById("pw").value;
-      const processed = _0xabc123(input);
-      const expected = _0xabc123(storedHash);
-
-      if (processed === expected) {
-        alert("Akses diberikan.");
-        window.location.href = "https://www.profitablecpmrate.com/u598fm1ar?key=9c9ec3d0042015f36ec8197285c31058";
-      } else {
-        alert("Kode salah!");
-      }
-    }
-
     // Efek Matrix
     const rain = document.getElementById("rain");
-    const chars = "101010101";
-    for (let i = 0; i < 80; i++) {
+    const chars = "1010101010101";
+    for (let i = 0; i < 100; i++) {
       const drop = document.createElement("div");
       drop.textContent = chars[Math.floor(Math.random() * chars.length)];
       drop.style.left = Math.random() * 100 + "vw";
       drop.style.animationDuration = 2 + Math.random() * 3 + "s";
       drop.style.fontSize = 14 + Math.random() * 10 + "px";
       rain.appendChild(drop);
+    }
+
+    // Password "051123" yang diobfus
+    function obfuscate(str) {
+      return btoa(str).split("").reverse().join("");
+    }
+    const realPassword = obfuscate("051123");
+
+    function validate() {
+      const input = document.getElementById("password").value;
+      if (obfuscate(input) === realPassword) {
+        alert("Kode benar! Mengarahkan ke halaman...");
+        window.location.href = "https://www.profitablecpmrate.com/u598fm1ar?key=9c9ec3d0042015f36ec8197285c31058";
+      } else {
+        alert("Kode salah! Coba lagi.");
+      }
     }
   </script>
 </body>
