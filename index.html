@@ -3,75 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login - MR.M05T3R</title>
+  <title>HACKED BY MR.M05T3R</title>
   <link rel="icon" href="https://pelitaenergi-indonesia.co.id/wp-content/uploads/2024/07/ac9e874423972bdebc8f4b4371c7c93e.gif" />
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow-x: hidden; scroll-behavior: smooth; }
     body {
-      font-family: 'Share Tech Mono', monospace;
       background-color: #000;
       color: #0f0;
+      font-family: 'Share Tech Mono', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
     }
-    .marquee span {
-      display: inline-block;
+    #loader {
+      position: fixed;
+      z-index: 9999;
+      background: #000;
+      color: #0f0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      text-shadow: 0 0 10px #0f0;
+      animation: glitch 1s infinite alternate;
+    }
+    @keyframes glitch {
+      0% { transform: translate(1px, -1px); }
+      100% { transform: translate(-1px, 1px); }
+    }
+    #login-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    #main-content { display: none; flex-direction: column; align-items: center; }
+    input {
+      padding: 10px;
+      background: #111;
+      color: #0f0;
+      border: 1px solid #0f0;
+      border-radius: 5px;
+      font-size: 1rem;
+      text-align: center;
+    }
+    button, .contact-button, .music-button, .share-button {
+      margin: 10px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      background-color: #0f0;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover, .contact-button:hover, .music-button:hover, .share-button:hover {
+      background-color: #0c0;
+    }
+    img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      margin: 20px 0;
+    }
+    .headline {
+      font-size: 2.2rem;
+      text-shadow: 0 0 8px #0f0;
+      text-align: center;
+    }
+    .subtext {
+      font-size: 1.2rem;
+      color: #aaa;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .marquee-box {
+      width: 100%;
+      max-width: 800px;
+      overflow: hidden;
       white-space: nowrap;
+      border-top: 1px solid #0f0;
+      border-bottom: 1px solid #0f0;
+      margin: 20px 0;
+    }
+    .marquee-box span {
+      display: inline-block;
       animation: marquee 15s linear infinite;
     }
     @keyframes marquee {
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
+    footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #555;
+      border-top: 1px solid #0f0;
+      padding-top: 10px;
+    }
+    #music-status { font-size: 0.9rem; margin-top: 10px; color: #888; }
   </style>
 </head>
-<body class="flex justify-center items-center min-h-screen text-center p-4">
+<body>
+  <div id="loader">Loading...</div>
 
-  <!-- LOADING SCREEN -->
-  <div id="loadingScreen" class="fixed inset-0 flex items-center justify-center bg-black z-50">
-    <div class="text-green-400 text-xl animate-pulse">LOADING...</div>
+  <div id="login-container">
+    <h2>Login Admin</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="checkLogin()">Masuk</button>
+    <div id="login-msg" style="color:red;"></div>
   </div>
 
-  <!-- LOGIN FORM -->
-  <div id="loginPage" class="w-full max-w-sm">
-    <h1 class="text-3xl mb-6">Login Admin</h1>
-    <input id="username" type="text" placeholder="Username" class="w-full mb-4 px-4 py-2 rounded bg-black border border-green-500 text-green-400 placeholder-green-600">
-    <input id="password" type="password" placeholder="Password" class="w-full mb-4 px-4 py-2 rounded bg-black border border-green-500 text-green-400 placeholder-green-600">
-    <button onclick="checkLogin()" class="bg-green-500 hover:bg-green-600 text-black w-full py-2 rounded font-bold">LOGIN</button>
-    <div id="loginError" class="text-red-500 mt-3 hidden">Username / Password salah!</div>
-  </div>
+  <div id="main-content">
+    <img src="https://pelitaenergi-indonesia.co.id/wp-content/uploads/2024/07/ac9e874423972bdebc8f4b4371c7c93e.gif" alt="Hack Banner" />
+    <div class="headline">&lt;/&gt; FOUNDED BY MR.M05T3R &lt;/&gt;</div>
+    <div class="subtext">- WE ARE NEWBIE CYBER SECURITY -</div>
 
-  <!-- MAIN PAGE -->
-  <div id="mainPage" class="hidden flex-col items-center justify-center text-center min-h-screen w-full p-4">
-    <img src="https://pelitaenergi-indonesia.co.id/wp-content/uploads/2024/07/ac9e874423972bdebc8f4b4371c7c93e.gif" alt="Hack Banner" class="w-full max-w-xl mb-6 rounded-lg shadow-md"/>
-
-    <h1 class="text-3xl md:text-5xl font-bold">&lt;/&gt; FOUNDED BY MR.M05T3R &lt;/&gt;</h1>
-    <p class="text-lg text-gray-400 mt-2">- WE ARE NEWBIE CYBER SECURITY -</p>
-
-    <div class="marquee w-full max-w-4xl border-y border-green-500 my-6 py-2 overflow-hidden">
+    <div class="marquee-box">
       <span>MR.M05T3R - GHOSTCLONET77 - SUMOONID - FAKEWORLD - INDRA XPLOIT NCS - N0B1T4 - MR ALI LCFR 019 - BULLYXPLOIT - NEWBIE CYBER SECURITY - SURABAYAXPLOIT - NOVGREY - DORAEMON CYBER TEAM - KBCII - PASURUAN SECTEAM</span>
     </div>
 
-    <div class="flex flex-col sm:flex-row gap-4 mt-4">
-      <a href="mailto:offcncs@gmail.com" class="bg-green-500 hover:bg-green-600 text-black px-6 py-3 rounded-lg font-semibold transition duration-300">Hubungi Kami</a>
-      
-      <button onclick="toggleMusic()" class="bg-green-500 hover:bg-green-600 text-black px-6 py-3 rounded-lg font-semibold flex items-center transition duration-300">
-        <svg id="icon-play" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="black" viewBox="0 0 16 16">
-          <path d="M6.271 3.055A.5.5 0 0 1 7 3.5v9a.5.5 0 0 1-.763.424L2.347 10.6A.5.5 0 0 1 2 10.153V5.847a.5.5 0 0 1 .347-.474l3.89-1.953a.5.5 0 0 1 .034-.014z"/>
-        </svg>
-        <span id="music-button-text" class="ml-2">Putar Musik</span>
-      </button>
+    <a href="mailto:offcncs@gmail.com" class="contact-button">Hubungi Kami</a>
+    <a href="https://wa.me/?text=Hacked%20By%20MR.M05T3R%20%F0%9F%94%A5%20https://example.com" target="_blank" class="share-button">Share via WhatsApp</a>
 
-      <button onclick="shareToWA()" class="bg-green-500 hover:bg-green-600 text-black px-6 py-3 rounded-lg font-semibold flex items-center transition duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="black" width="18" height="18" viewBox="0 0 24 24"><path d="M20.52 3.48A12.2 12.2 0 0 0 3.48 20.52L2 24l3.48-1.48A12.2 12.2 0 0 0 24 12a12.2 12.2 0 0 0-3.48-8.52zM12 21.25A9.22 9.22 0 0 1 6 19.53l-.44-.26-2.05.88.88-2.05-.26-.44a9.22 9.22 0 1 1 7.87 4.59zm5.11-6.73c-.27-.13-1.61-.79-1.86-.88s-.43-.13-.61.13-.7.88-.86 1.06-.31.2-.58.07a7.46 7.46 0 0 1-2.2-1.35 8.29 8.29 0 0 1-1.53-1.88c-.16-.27 0-.41.12-.54.13-.13.27-.31.4-.47s.18-.27.27-.45a.55.55 0 0 0-.03-.52c-.08-.13-.61-1.46-.84-2s-.45-.43-.61-.44h-.52a1 1 0 0 0-.74.34 3.13 3.13 0 0 0-1 2.31 5.45 5.45 0 0 0 1.15 2.58 12.6 12.6 0 0 0 4.88 4.45c.68.29 1.21.46 1.63.59a3.9 3.9 0 0 0 1.8.11 3 3 0 0 0 2-1.42 2.4 2.4 0 0 0 .17-1.42c-.07-.11-.24-.18-.51-.31z"/></svg>
-        <span class="ml-2">Share ke WhatsApp</span>
-      </button>
-    </div>
+    <button class="music-button" onclick="toggleMusic()">
+      <span id="music-button-text">Putar Musik</span>
+    </button>
+    <div id="music-status">Musik belum diputar</div>
 
-    <div id="music-status" class="text-sm text-gray-400 mt-2">Musik belum diputar</div>
-
-    <footer class="mt-12 border-t border-green-500 pt-4 text-sm text-gray-500 w-full text-center">
-      &copy; 2025 Newbie Cyber Security. Founder: MR.M05T3R
-    </footer>
+    <footer>&copy; 2025 Newbie Cyber Security. Founder: MR.M05T3R</footer>
   </div>
 
   <audio id="bg-music" loop muted>
@@ -80,50 +149,40 @@
   </audio>
 
   <script>
-    // Loading screen timeout
-    window.onload = () => {
-      setTimeout(() => {
-        document.getElementById('loadingScreen').style.display = 'none';
-      }, 1500);
-    };
+    const loader = document.getElementById("loader");
+    const login = document.getElementById("login-container");
+    const main = document.getElementById("main-content");
+    const music = document.getElementById("bg-music");
+    const buttonText = document.getElementById("music-button-text");
+    const statusText = document.getElementById("music-status");
+
+    window.onload = () => setTimeout(() => loader.style.display = "none", 1500);
 
     function checkLogin() {
-      const user = document.getElementById("username").value;
-      const pass = document.getElementById("password").value;
-      if (user === "admin" && pass === "adminncs051119") {
-        document.getElementById("loginPage").classList.add("hidden");
-        document.getElementById("mainPage").classList.remove("hidden");
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+      if (u === "admin" && p === "adminncs051119") {
+        login.style.display = "none";
+        main.style.display = "flex";
+        music.muted = false;
+        music.play();
+        buttonText.textContent = "Jeda Musik";
+        statusText.textContent = "Musik diputar...";
       } else {
-        document.getElementById("loginError").classList.remove("hidden");
+        document.getElementById("login-msg").textContent = "Login gagal! Username/password salah.";
       }
     }
 
     function toggleMusic() {
-      const music = document.getElementById("bg-music");
-      const buttonText = document.getElementById("music-button-text");
-      const iconPlay = document.getElementById("icon-play");
-      const statusText = document.getElementById("music-status");
-
       if (music.paused) {
-        music.muted = false;
-        music.play().then(() => {
-          buttonText.textContent = "Jeda Musik";
-          iconPlay.innerHTML = '<path d="M5.5 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0v-8a.5.5 0 0 1 .5-.5zm5 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0v-8a.5.5 0 0 1 .5-.5z"/>';
-          statusText.textContent = "Musik diputar...";
-        });
+        music.play();
+        buttonText.textContent = "Jeda Musik";
+        statusText.textContent = "Musik diputar...";
       } else {
         music.pause();
         buttonText.textContent = "Putar Musik";
-        iconPlay.innerHTML = '<path d="M6.271 3.055A.5.5 0 0 1 7 3.5v9a.5.5 0 0 1-.763.424L2.347 10.6A.5.5 0 0 1 2 10.153V5.847a.5.5 0 0 1 .347-.474l3.89-1.953a.5.5 0 0 1 .034-.014z"/>';
         statusText.textContent = "Musik dijeda.";
       }
-    }
-
-    function shareToWA() {
-      const url = window.location.href;
-      const text = "🔥 HACKED BY MR.M05T3R 🔥\n" + url;
-      const waUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
-      window.open(waUrl, "_blank");
     }
   </script>
 </body>
